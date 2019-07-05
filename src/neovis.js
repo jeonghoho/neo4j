@@ -6,7 +6,7 @@ import 'vis/dist/vis-network.min.css';
 import { defaults } from './defaults';
 import { EventController, CompletionEvent } from './events';
 
-export default class Neo {
+export default class NeoVis {
 	_nodes = {};
 	_edges = {};
 	_data = {};
