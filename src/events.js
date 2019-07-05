@@ -14,7 +14,6 @@ export class EventController {
 	 * @param {callback} handler - Handler to manage the event
 	 */
 	register(eventType, handler) {
-		alert(JSON.stringify(eventType)); //for debugging
 		if (this._handlers[eventType] === undefined) {
 			throw new Error('Unknown event: ' + eventType);
 		}
@@ -28,6 +27,7 @@ export class EventController {
 	 * @param {object} values - Values associated to the event
 	 */
 	generateEvent(eventType, values) {
+		alert(JSON.stringify(eventType)); //for debugging
 		if (this._handlers[eventType] === undefined) {
 			throw new Error('Unknown event: ' + eventType);
 		}
