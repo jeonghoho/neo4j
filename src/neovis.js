@@ -41,14 +41,10 @@ export default class NeoVis {
 
 	_init(config) {
 		this._config = config;
-		this._encrypted = config.encrypted || defaults.neo4j.encrypted;
-		this._trust = config.trust || defaults.neo4j.trust;
 		this._driver = Neo4j.driver(
 			config.server_url || defaults.neo4j.neo4jUri,
 			Neo4j.auth.basic(config.server_user || defaults.neo4j.neo4jUser, config.server_password || defaults.neo4j.neo4jPassword),
 			{
-				encrypted: this._encrypted,
-				trust: this._trust
 			}
 		);
 		this._query = config.initial_cypher || defaults.neo4j.initialQuery;
